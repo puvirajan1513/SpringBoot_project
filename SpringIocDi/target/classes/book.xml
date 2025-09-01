@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="b1" class="org.tnsif.springdi.Book">
+        <constructor-arg value="Java Basics"/>
+        <constructor-arg value="James Gosling"/>
+    </bean>
+
+    <bean id="b2" class="org.tnsif.springdi.Book">
+        <constructor-arg value="Spring Framework"/>
+        <constructor-arg value="Rod Johnson"/>
+    </bean>
+
+    <bean id="libraryBean" class="org.tnsif.springdi.Library">
+        <constructor-arg>
+            <list>
+                <ref bean="b1"/>
+                <ref bean="b2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>

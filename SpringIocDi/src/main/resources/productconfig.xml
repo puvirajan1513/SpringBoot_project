@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="p1" class="com.tnsif.SpringIocDi.Product">
+    <property name="pid" value="101"/>
+    <property name="pname" value="Laptop"/>
+</bean>
+
+
+    <bean id="p2" class="com.tnsif.SpringIocDi.Product">
+        <constructor-arg value="2"/>
+        <constructor-arg value="Phone"/>
+        <constructor-arg value="25000"/>
+    </bean>
+
+    <bean id="cartBean" class="com.tnsif.SpringIocDi.Product">
+        <constructor-arg>
+            <list>
+                <ref bean="p1"/>
+                <ref bean="p2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>

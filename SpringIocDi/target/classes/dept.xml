@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="deptBean" class="org.tnsif.springdi.Department">
+        <constructor-arg value="IT"/>
+    </bean>
+
+    <bean id="companyBean" class="org.tnsif.springdi.Company">
+        <constructor-arg value="TechCorp"/>
+    </bean>
+
+    <bean id="employeeBean" class="org.tnsif.springdi.Employee">
+        <constructor-arg value="Alice"/>
+        <constructor-arg ref="deptBean"/>
+        <constructor-arg ref="companyBean"/>
+    </bean>
+
+</beans>
